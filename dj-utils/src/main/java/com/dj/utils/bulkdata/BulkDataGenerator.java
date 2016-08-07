@@ -1,5 +1,7 @@
 package com.dj.utils.bulkdata;
 
+import com.dj.utils.common.Timer;
+
 import java.io.BufferedWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,10 +18,9 @@ public class BulkDataGenerator {
 	private Random random = new Random();
 
 	public static void main(String[] args) throws Exception {
-		long start = System.currentTimeMillis();
+		Timer mainTimer = Timer.newTimer();
 		new BulkDataGenerator().start();
-		long end = System.currentTimeMillis();
-		System.out.format("Bulk Data generation took %d millis%n", (end - start));
+		System.out.format("Bulk Data generation took %d millis%n", mainTimer.time());
 	}
 
 	private void start() throws Exception {

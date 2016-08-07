@@ -18,8 +18,9 @@ public class FileReadWriteComparison {
 
 	public static void main(String[] args) throws Exception {
 		long start = System.currentTimeMillis();
-//		new FileReadWriteComparison().normalBufferedReadWrite();
-		new FileReadWriteComparison().fileChannelWithMappedByteBuffer();
+		new FileReadWriteComparison().normalBufferedReadWrite();
+//		new FileReadWriteComparison().fileChannelWithMappedByteBuffer();
+//		new FileReadWriteComparison().bufferedReadNormalWrite();
 		long end = System.currentTimeMillis();
 		System.out.format("Time taken: %d%n", (end - start));
 	}
@@ -27,6 +28,18 @@ public class FileReadWriteComparison {
 	private void normalBufferedReadWrite() throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(FILE_TO_READ));
 		BufferedWriter out = new BufferedWriter(new FileWriter(FILE_TO_WRITE));
+		String line;
+		while ( (line = br.readLine()) != null) {
+			out.write(line);
+			out.write("\n");
+		}
+		out.close();
+		br.close();
+	}
+
+	private void bufferedReadNormalWrite() throws Exception {
+		BufferedReader br = new BufferedReader(new FileReader(FILE_TO_READ));
+		FileWriter out = new FileWriter(FILE_TO_WRITE);
 		String line;
 		while ( (line = br.readLine()) != null) {
 			out.write(line);
