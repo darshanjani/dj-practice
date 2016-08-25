@@ -11,7 +11,7 @@ import java.util.Random;
  * Created by Darshan on 8/6/16.
  */
 public class BulkDataGenerator {
-	private static final long NO_OF_ROWS_TO_GENERATE = 5_000_000;
+	private static final long NO_OF_ROWS_TO_GENERATE = 10_000_000;
 	private static final int ROWS_PADDING = Long.toString(NO_OF_ROWS_TO_GENERATE).length();
 	private static final String OUTPUT_FILE = "target/gen_data.csv";
 	private String[] currencies = new String[]{"ALL", "EUR", "GBP", "DZD", "USD", "AOA", "XCD", "ARS", "AMD", "AWG"};

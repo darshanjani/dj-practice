@@ -1,5 +1,7 @@
 package com.dj.utils.externalsorting;
 
+import com.dj.utils.common.Timer;
+
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
@@ -19,7 +21,7 @@ public class FileReadWriteComparison {
 	public static void main(String[] args) throws Exception {
 		long start = System.currentTimeMillis();
 		new FileReadWriteComparison().normalBufferedReadWrite();
-//		new FileReadWriteComparison().fileChannelWithMappedByteBuffer();
+//		new FileReadWriteComparison().fileChannelWithByteBuffer();
 //		new FileReadWriteComparison().bufferedReadNormalWrite();
 		long end = System.currentTimeMillis();
 		System.out.format("Time taken: %d%n", (end - start));
@@ -31,7 +33,7 @@ public class FileReadWriteComparison {
 		String line;
 		while ( (line = br.readLine()) != null) {
 			out.write(line);
-			out.write("\n");
+			out.write(System.lineSeparator());
 		}
 		out.close();
 		br.close();
@@ -43,48 +45,38 @@ public class FileReadWriteComparison {
 		String line;
 		while ( (line = br.readLine()) != null) {
 			out.write(line);
-			out.write("\n");
+			out.write(System.lineSeparator());
 		}
 		out.close();
 		br.close();
 	}
 
-	private void fileChannelWithMappedByteBuffer() throws Exception {
+	private void fileChannelWithByteBuffer() throws Exception {
 		FileChannel rChannel = new RandomAccessFile(FILE_TO_READ, "r").getChannel();
-		ByteBuffer rBuf = ByteBuffer.allocate(BIG_FILE_SIZE);
-
-		FileChannel wChannel = new FileOutputStream(FILE_TO_WRITE, true).getChannel();
-//		ByteBuffer wrBuf = ByteBuffer.allocate(BIG_FILE_SIZE);
-//		ByteBuffer wrBuf = wChannel.map(FileChannel.MapMode.READ_WRITE, 0, BIG_FILE_SIZE);
-
-		int numBytesRead = 0;
-		long totalBytesRead = 0;
-		while( (numBytesRead = rChannel.read(rBuf)) != -1) {
-			if (numBytesRead ==0) continue;
-			System.out.format("Bytes read: %d%n", numBytesRead);
-//			Thread.sleep(1000);
-			rBuf.flip();
-			totalBytesRead += numBytesRead;
-//			rChannel.position(totalBytesRead);
-			wChannel.write(rBuf);
-			rBuf.clear();
+		ByteBuffer rBuf = ByteBuffer.allocate(BYTE_SIZE_1_MB);
+		FileWriter writer = new FileWriter(new File(FILE_TO_WRITE));
+		StringBuilder sb = new StringBuilder();
+		int bytesRead = -1;
+		while ((bytesRead = rChannel.read(rBuf)) != -1) {
+			if (bytesRead > 0) {
+				for (int i = 0; i < rBuf.array().length; i++) {
+					if ((char)rBuf.array()[i] == '\r') {
+						i++;
+						writer.write(sb.toString());
+						writer.write(System.lineSeparator());
+						sb = new StringBuilder();
+					} else {
+						sb.append((char)rBuf.array()[i]);
+					}
+				}
+				rBuf.clear();
+			}
 		}
-
-//		MappedByteBuffer mb = rChannel.map(FileChannel.MapMode.READ_ONLY, 0, rChannel.size());
-//		byte[] bArray = new byte[BYTE_ARRAY_SIZE];
-//		int nGet;
-//		int checkSum = 0;
-//		while (mb.hasRemaining()) {
-//			nGet = Math.min(mb.remaining(), BYTE_ARRAY_SIZE);
-//			checkSum += nGet;
-//			mb.get(bArray, 0, nGet);
-//			if (checkSum > BIG_FILE_SIZE) {
-//				wrBuf.clear();
-//				checkSum = 0;
-//			}
-//			wrBuf.put(bArray, 0, nGet);
-//		}
-		wChannel.close();
+		if (sb.length() > 0) {
+			writer.write(sb.toString());
+			writer.write(System.lineSeparator());
+		}
+		writer.close();
 		rChannel.close();
 	}
 }

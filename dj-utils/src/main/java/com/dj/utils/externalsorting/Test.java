@@ -56,10 +56,7 @@ public class Test {
 	}*/
 
 	public static void main(String[] args) throws Exception {
-		FileWriter fr = new FileWriter(OUT_FILE);
-		for (int i = 0; i < 1000000; i++) {
-			fr.write("This is a string " + i + System.lineSeparator());
-		}
-		fr.close();
+		System.out.println((char)System.lineSeparator().getBytes()[0]);
+		System.out.println((char)System.lineSeparator().getBytes()[1]);
 	}
 }
