@@ -13,3 +13,5 @@ buildNumber.properties
 .settings/
 *.iml
 node_modules/
+bin/
+*.pyc
