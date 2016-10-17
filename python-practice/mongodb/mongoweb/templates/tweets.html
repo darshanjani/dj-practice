@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Tweet Archive</h1>
+{% for tag in TAGS %}
+<a href="/?tag={{tag|urlencode}}"> {{ tag }}</a>
+{% endfor %}
+{% for tweet in TWEETS %}
+<h2> {{ tweet['text'] }} </h2>
+<p>
+    <a href="http://twitter.com/{{ tweet['user']['screen_name'] }}">
+        {{ tweet['user']['screen_name'] }}
+    </a>
+    on {{ tweet['created_at'] }}
+</p>
+<img src="{{ tweet['user']['profile_image_url'] }}" width="48"/>
+{% endfor %}
+</body>
+</html>
