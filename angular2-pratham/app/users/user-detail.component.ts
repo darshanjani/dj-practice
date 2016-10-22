@@ -1,7 +1,6 @@
 import { Component, OnInit, NgZone, EventEmitter } from '@angular/core';
-import { Location } from '@angular/common';
 import { UserService } from './user.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   template: `
@@ -36,16 +35,18 @@ export class UserDetailComponent implements OnInit {
   private fileDisplayUrl = 'http://localhost:8090/file/files/';
   private previewData: any;
   private uploadEvents: EventEmitter<any> = new EventEmitter();
+  private arrivingFromPage: string;
 
   constructor(private userService: UserService
     , private route: ActivatedRoute
-    , private _location: Location) { }
+    , private router: Router) { }
 
   ngOnInit() {
     // Subscribe to route params
       this.sub = this.route.params.subscribe(params => {
 
         let id = params['id'];
+        this.arrivingFromPage = params['fromPage'];
 
        // Retrieve Pet with Id route param
         this.userService.findUserById(id).subscribe(user => this.user = user);
@@ -93,6 +94,6 @@ export class UserDetailComponent implements OnInit {
   }
 
   backClicked() {
-    this._location.back();
+    this.router.navigate(['/users', {page: this.arrivingFromPage}]);
   }
 }
