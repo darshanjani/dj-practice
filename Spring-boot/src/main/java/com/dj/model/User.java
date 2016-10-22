@@ -10,14 +10,16 @@ public class User {
     private int id;
     private String name;
     private Date dob;
+    private String imgName;
 
     public User() {
     }
 
-    public User(int id, String name, Date dob) {
+    public User(int id, String name, Date dob, String imgName) {
         this.id = id;
         this.name = name;
         this.dob = dob;
+        this.imgName = imgName;
     }
 
     public int getId() {
@@ -44,12 +46,21 @@ public class User {
         this.dob = dob;
     }
 
+    public String getImgName() {
+        return imgName;
+    }
+
+    public void setImgName(String imgName) {
+        this.imgName = imgName;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", dob=" + dob +
+                ", imgName='" + imgName + '\'' +
                 '}';
     }
 }

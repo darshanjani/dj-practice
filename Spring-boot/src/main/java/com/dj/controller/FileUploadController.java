@@ -1,7 +1,12 @@
 package com.dj.controller;
 
+import com.dj.model.CustomResponse;
+import com.dj.model.User;
+import com.dj.repository.UserRepository;
 import com.dj.storage.StorageFileNotFoundException;
 import com.dj.storage.StorageService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -14,12 +19,15 @@ import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBui
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping("/file")
+@RequestMapping("file")
 public class FileUploadController {
 
+    private static final Logger logger = LoggerFactory.getLogger(FileUploadController.class);
     private final StorageService storageService;
 
     @Autowired
@@ -27,9 +35,15 @@ public class FileUploadController {
         this.storageService = storageService;
     }
 
-    @GetMapping("/")
-    public String listUploadedFiles(Model model) throws IOException {
+    @Autowired
+    public UserRepository userRepo;
 
+    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
+
+    @GetMapping("/")
+    @ResponseBody
+    public CustomResponse listUploadedFiles(Model model) throws IOException {
+        logger.info("Listing uploaded files");
         model.addAttribute("files", storageService
                 .loadAll()
                 .map(path ->
@@ -38,13 +52,14 @@ public class FileUploadController {
                                 .build().toString())
                 .collect(Collectors.toList()));
 
-        return "uploadForm";
+//        return "uploadForm";
+        return new CustomResponse(true);
     }
 
-    @GetMapping("/files/{filename:.+}")
+    @GetMapping("files/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
-
+        logger.info("Returning data for file: {}", filename);
         Resource file = storageService.loadAsResource(filename);
         return ResponseEntity
                 .ok()
@@ -52,15 +67,26 @@ public class FileUploadController {
                 .body(file);
     }
 
-    @PostMapping("/")
-    public String handleFileUpload(@RequestParam("file") MultipartFile file,
+    @PostMapping("/{id}")
+    @ResponseBody
+    public CustomResponse handleFileUpload(@PathVariable int id, @RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {
+        logger.info("Received request for storing file: {}", file.getOriginalFilename());
 
-        storageService.store(file);
-        redirectAttributes.addFlashAttribute("message",
-                "You successfully uploaded " + file.getOriginalFilename() + "!");
+        String newFileName = LocalDateTime.now().format(dtf);
+        String originalFilename = file.getOriginalFilename();
+        newFileName += originalFilename.substring(originalFilename.lastIndexOf("."));
+        storageService.store(file, newFileName);
 
-        return "redirect:/";
+        User user = userRepo.findOne(id);
+        storageService.delete(user.getImgName());
+        user.setImgName(newFileName);
+        userRepo.updateUser(user);
+
+//        return "redirect:/file/";
+        CustomResponse response = new CustomResponse(true);
+        response.addData("newImg", newFileName);
+        return response;
     }
 
     @ExceptionHandler(StorageFileNotFoundException.class)

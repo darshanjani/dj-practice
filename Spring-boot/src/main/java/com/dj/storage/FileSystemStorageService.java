@@ -1,5 +1,7 @@
 package com.dj.storage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -17,23 +19,32 @@ import java.util.stream.Stream;
 @Service
 public class FileSystemStorageService implements StorageService {
 
+    private static final Logger logger = LoggerFactory.getLogger(FileSystemStorageService.class);
+
     private final Path rootLocation;
 
     @Autowired
     public FileSystemStorageService(StorageProperties properties) {
         this.rootLocation = Paths.get(properties.getLocation());
+        logger.info("Setting root location for file storage to: {}", rootLocation.toAbsolutePath().toString());
     }
 
     @Override
-    public void store(MultipartFile file) {
+    public void store(MultipartFile file, String newFileName) {
         try {
             if (file.isEmpty()) {
                 throw new StorageException("Failed to store empty file " + file.getOriginalFilename());
             }
-            Files.copy(file.getInputStream(), this.rootLocation.resolve(file.getOriginalFilename()));
+            Files.copy(file.getInputStream(), this.rootLocation.resolve(newFileName));
         } catch (IOException e) {
             throw new StorageException("Failed to store file " + file.getOriginalFilename(), e);
         }
+    }
+
+    @Override
+    public void delete(String filename) {
+        Path file = load(filename);
+        file.toFile().delete();
     }
 
     @Override

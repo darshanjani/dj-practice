@@ -82,7 +82,7 @@ public class UserController {
         logger.info("Load 31 users for testing");
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         for (int i = 0; i < 31; i++) {
-            userRepo.addUser(new User((i+1), "User_" + (i+1), sdf.parse("25/12/200" + i)));
+            userRepo.addUser(new User((i+1), "User_" + (i+1), sdf.parse("25/12/200" + i), ""));
         }
 //        userRepo.addUser(new User(1, "Dj", sdf.parse("25/12/2000")));
 //        userRepo.addUser(new User(2, "Sim", sdf.parse("30/1/2001")));
