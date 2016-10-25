@@ -1,6 +1,7 @@
 package com.dj.controller;
 
 import com.dj.model.CustomResponse;
+import com.dj.model.LoginUser;
 import com.dj.model.User;
 import com.dj.repository.UserRepository;
 import org.slf4j.Logger;
@@ -61,10 +62,13 @@ public class UserController {
         return new PageImpl<User>(users, new PageRequest(page, size), userRepo.findAll().size());
     }
 
-    @RequestMapping(value="/adduser", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @RequestMapping(value="/adduser", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
-    public CustomResponse addUser(User user) {
+    public CustomResponse addUser(@RequestBody User user) {
         logger.info("Adding user: {}", user);
+        OptionalInt maxId = userRepo.findAll().stream().mapToInt(u -> u.getId()).max();
+        int newId = maxId.orElse(0);
+        user.setId(newId+1);
         userRepo.addUser(user);
         return new CustomResponse(true);
     }
@@ -76,13 +80,24 @@ public class UserController {
         return userRepo.findOne(id);
     }
 
+    @RequestMapping(value="/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ResponseBody
+    public CustomResponse saveUser(@PathVariable("id") int id, @RequestBody User user) {
+        logger.info("Saving user: {}, with data: {}", id, user);
+        User userInRepo = userRepo.findOne(id);
+        User mergedUser = userInRepo.merge(user);
+        logger.info("Merged user: {}", mergedUser);
+        userRepo.updateUser(mergedUser);
+        return new CustomResponse(true);
+    }
+
     @RequestMapping(value="/loadusers", method = RequestMethod.GET)
     @ResponseBody
     public String testLoadAllUsers() throws Exception {
         logger.info("Load 31 users for testing");
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         for (int i = 0; i < 31; i++) {
-            userRepo.addUser(new User((i+1), "User_" + (i+1), sdf.parse("25/12/200" + i), ""));
+            userRepo.addUser(new User((i+1), "User_" + (i+1), sdf.parse("25/12/20" + String.format("%02d", i)), ""));
         }
 //        userRepo.addUser(new User(1, "Dj", sdf.parse("25/12/2000")));
 //        userRepo.addUser(new User(2, "Sim", sdf.parse("30/1/2001")));

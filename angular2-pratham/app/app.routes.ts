@@ -1,25 +1,19 @@
-// ====== ./app/app.routes.ts ======
-
-// Imports
-// Deprecated import
-// import { provideRouter, RouterConfig } from '@angular/router';
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CatListComponent } from './cats/cat-list.component';
-import { UserListComponent } from './users/user-list.component';
-import { UserDetailComponent } from './users/user-detail.component';
+import { userRoutes } from './users/user-routes';
 
 // Route Configuration
-export const routes: Routes = [
+let routes: Routes = [
   {
     path: '',
     redirectTo: '/users',
     pathMatch: 'full'
   },
-  { path: 'inst', component: CatListComponent },
-  { path: 'users', component: UserListComponent },
-  { path: 'users/:id', pathMatch: 'full' , component: UserDetailComponent }
+  { path: 'inst', component: CatListComponent }
 ];
+
+routes = routes.concat(userRoutes);
 
 // Deprecated provide
 // export const APP_ROUTER_PROVIDERS = [

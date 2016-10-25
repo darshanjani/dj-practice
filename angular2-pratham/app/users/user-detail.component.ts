@@ -1,40 +1,51 @@
 import { Component, OnInit, NgZone, EventEmitter } from '@angular/core';
 import { UserService } from './user.service';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   template: `
-  <div *ngIf="user">
-        <h2>{{user.name}}</h2>
-        <span *ngIf="user.imgName != ''">
-          <img src='{{ fileDisplayUrl }}/{{user.imgName}}'>
-        </span>
-        <br/>
-        Upload New Profile Picture: <input type="file" 
-          ngFileSelect
-          [options]="options"
-          (onUpload)="handleUpload($event)">
-        <p><strong>Id: </strong>{{ user.id }}</p>
-        <p><strong>Date of Birth: </strong>{{ user.dob | date: 'dd/MM/yyyy' }}</p>
-        <button type="button" class="btn btn-primary" (click)="backClicked()">Back</button>
+  <span *ngIf="user">
+    <div class="panel panel-default">
+      <div class="panel-heading">Viewing User: {{user.name}}</div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="control-label col-sm-2">User Photo:</label>
+          <div class="col-sm-10">
+            <span *ngIf="user.imgName != ''">
+              <img src='{{ fileDisplayUrl }}/{{ user.imgName }}'>
+            </span>
+            <span *ngIf="user.imgName == ''">
+              <p class="form-control-static">No Image uploaded yet. Edit the user to upload new photo</p>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2">Name:</label>
+          <div class="col-sm-10">
+            <p class="form-control-static">{{ user.name }}</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="dob">Date of Birth:</label>
+          <div class="col-sm-10">
+              <p class="form-control-static">{{ user.dob | date:"dd/MM/yyyy" }}</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-primary" (click)="backClicked()">Back</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <!--div>
-      Response: {{ response | json }}
-    </div-->
+  </span>
   `,
   providers: [ UserService ]
 })
 export class UserDetailComponent implements OnInit {
   private sub: any;
   private user: any;
-  private zone: NgZone;
-  private options: Object;
-  private progress: number = 0;
-  private response: any = {};
-  private fileUploadUrl = 'http://localhost:8090/file/';
   private fileDisplayUrl = 'http://localhost:8090/file/files/';
-  private previewData: any;
-  private uploadEvents: EventEmitter<any> = new EventEmitter();
   private arrivingFromPage: string;
 
   constructor(private userService: UserService
@@ -50,47 +61,7 @@ export class UserDetailComponent implements OnInit {
 
        // Retrieve Pet with Id route param
         this.userService.findUserById(id).subscribe(user => this.user = user);
-
-        // this.zone = new NgZone({ enableLongStackTrace: false });
-        // this.options = {
-        //   url: 'http://localhost:8090/file',
-        //   calculateSpeed: true,
-        //   filterExtensions: true,
-        //   allowedExtensions: ['image/png', 'image/jpg'],
-        //   autoUpload: false,
-        //   previewUrl: true,
-        //   data: {
-        //     userId: id,
-        //     isAdmin: true
-        //   },
-        //   customHeaders: {
-        //     'custom-header': 'value'
-        //   }
-        // };
-        this.zone = new NgZone({ enableLongStackTrace: false });
-        this.options = {
-          url: this.fileUploadUrl + id + '/'
-        };
     });
-  }
-
-  handleUpload(data: any): void {
-    this.zone.run(() => {
-      this.response = data;
-      this.progress = data.progress.percent / 100;
-      if (data.response) {
-        let userData: any = JSON.parse(data.response);
-        this.user.imgName = userData.data.newImg;
-      }
-    });
-  }
-
-  handlePreviewData(data: any): void {
-    this.previewData = data;
-  }
-
-  startUpload(): void {
-    this.uploadEvents.emit('startUpload');
   }
 
   backClicked() {

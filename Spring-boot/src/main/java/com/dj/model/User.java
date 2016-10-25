@@ -63,4 +63,10 @@ public class User {
                 ", imgName='" + imgName + '\'' +
                 '}';
     }
+
+    public User merge(User updatedUser) {
+        this.setName(updatedUser.getName());
+        this.setDob(updatedUser.getDob());
+        return this;
+    }
 }

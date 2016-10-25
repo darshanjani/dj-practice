@@ -5,6 +5,9 @@ import { UserService } from './user.service';
 @Component({
   template: `
     <h2>Users</h2>
+    <div>
+      <a [routerLink]="['/createuser']" class="btn btn-default btn-primary" role="button">Create New</a>
+    </div>
     <ul class="pagination">
       <li 
         [class.active]="(i+1) == currentPage" 
@@ -25,7 +28,12 @@ import { UserService } from './user.service';
         <tr *ngFor="let c of (content | async)?.content; let i = index">
           <td>{{ i + 1 }} </td>
           <td>{{ c.id }} </td>
-          <td><a [routerLink]="['/users', c.id, { fromPage: (currentPage - 1) }]"> {{ c.name }} </a></td>
+          <td>
+            <a [routerLink]="['/users/edit', c.id, { fromPage: (currentPage - 1) }]">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+            <a [routerLink]="['/users', c.id, { fromPage: (currentPage - 1) }]"> {{ c.name }} </a>
+          </td>
           <td>{{ c.dob | date: 'dd/MM/yyyy' }} </td>
         </tr>
       </tbody>
