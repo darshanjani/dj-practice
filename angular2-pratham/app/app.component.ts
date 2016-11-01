@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a [routerLink]="['/']">Home</a></li>
-                    <li><a [routerLink]="['/inst']">Institutes</a></li>
+                    <li><a [routerLink]="['/expenses']">Expenses</a></li>
                     <li><a [routerLink]="['/users']">Users</a></li>
                 </ul>
             </div>

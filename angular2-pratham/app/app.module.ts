@@ -6,13 +6,13 @@ import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
-import { CatListComponent }  from './cats/cat-list.component';
+import { ViewExpenseComponent }  from './expenses/view-expense.component';
 import { USER_COMPONENTS } from './users/user-modules';
 import { routing } from './app.routes';
 
 @NgModule({
   imports: [ BrowserModule, routing, HttpModule, FormsModule, ReactiveFormsModule, Ng2BootstrapModule ],
-  declarations: [ AppComponent, CatListComponent, USER_COMPONENTS, UPLOAD_DIRECTIVES ],
+  declarations: [ AppComponent, ViewExpenseComponent, USER_COMPONENTS, UPLOAD_DIRECTIVES ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

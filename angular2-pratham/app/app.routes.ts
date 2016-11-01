@@ -1,6 +1,6 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CatListComponent } from './cats/cat-list.component';
+import { ViewExpenseComponent } from './expenses/view-expense.component';
 import { userRoutes } from './users/user-routes';
 
 // Route Configuration
@@ -10,7 +10,7 @@ let routes: Routes = [
     redirectTo: '/users',
     pathMatch: 'full'
   },
-  { path: 'inst', component: CatListComponent }
+  { path: 'expenses', component: ViewExpenseComponent }
 ];
 
 routes = routes.concat(userRoutes);
