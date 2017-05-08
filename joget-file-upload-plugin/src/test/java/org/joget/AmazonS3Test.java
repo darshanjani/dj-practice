@@ -1,4 +1,4 @@
-package com.dj;
+package org.joget;
 
 import com.amazonaws.HttpMethod;
 import com.amazonaws.auth.BasicAWSCredentials;
@@ -18,11 +18,11 @@ import java.net.URL;
 import java.util.List;
 
 /**
- * Unit test for simple App.
+ * Unit test for simple AmazonS3FileUploader.
  */
 public class AmazonS3Test
 {
-    private static final String BUCKET_NAME = "jogetupload";
+    private static final String BUCKET_NAME = "jogetupload2";
     private static AmazonS3 s3Client;
 
     @BeforeClass
@@ -30,7 +30,7 @@ public class AmazonS3Test
         java.security.Security.setProperty("networkaddress.cache.ttl" , "60");
         s3Client = AmazonS3ClientBuilder.standard()
                 .withCredentials(new ProfileCredentialsProvider())
-                .withRegion(Regions.AP_SOUTH_1)
+                .withRegion(Regions.AP_SOUTHEAST_1)
                 .build();
     }
 
@@ -43,14 +43,12 @@ public class AmazonS3Test
     }
 
     @Test
-    @Ignore
     public void uploadFile() {
         s3Client.putObject(BUCKET_NAME, "receipt1.jpg", new File("C:\\receipts\\receipt1.jpg"));
         s3Client.putObject(BUCKET_NAME, "receipt2.jpg", new File("C:\\receipts\\receipt2.jpg"));
     }
 
     @Test
-    @Ignore
     public void listObjects() {
         ObjectListing objectListing = s3Client.listObjects(BUCKET_NAME);
         List<S3ObjectSummary> objectSummaries = objectListing.getObjectSummaries();

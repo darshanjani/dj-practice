@@ -1,0 +1,19 @@
+[{
+    title : '@@datalist.fileLinkFormatter.config@@',
+    properties : [{
+        name : 'formDefId',
+        label : '@@datalist.fileLinkFormatter.form@@',
+        type : 'selectbox',
+        options_ajax : '[CONTEXT_PATH]/web/json/console/app[APP_PATH]/forms/options',
+        required : 'True'
+    },
+    {
+        name : 'attachment',
+        label : '@@datalist.fileLinkFormatter.attachment@@',
+        type : 'checkbox',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    }]
+}]
