@@ -1,0 +1,27 @@
+<h2>My Heroes</h2>
+<div>
+  <label>Hero name:</label> <input #heroName />
+  <button (click)="add(heroName.value); heroName.value=''">
+    Add
+  </button>
+</div>
+
+<div class="list-group">
+  <div *ngFor="let hero of heroes">
+    <a 
+    (click)="onSelect(hero)" 
+    class="list-group-item list-group-item-action justify-content-between"
+    [class.active]="hero === selectedHero">
+      <span class="badge badge-default badge-pill">{{hero.id}}</span> {{hero.name}}
+      <button (click)="delete(hero); $event.stopPropagation()">
+       X<span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </a>
+</div>
+<p> </p>
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.name | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

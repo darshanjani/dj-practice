@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
 
 /**
  * Created by Darshan on 5/9/2017.
@@ -35,8 +37,14 @@ public class CustomerController {
 
 	@GetMapping("/searchByFirst")
 	@ResponseBody
-	public Customer searchByFirstName() {
-		return repo.findByFirstName("Darshan");
+	public Customer searchByFirstName() throws  Exception {
+		CompletableFuture<Customer> customerFuture = repo.findByFirstName("Darshan");
+		customerFuture.thenAccept(this::printCustomer);
+		return customerFuture.get();
+	}
+
+	private void printCustomer(Customer customer) {
+		System.out.println(customer);
 	}
 
 	@GetMapping("/searchByLast")

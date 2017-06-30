@@ -15,3 +15,4 @@ buildNumber.properties
 node_modules/
 bin/
 *.pyc
+extjs-6.2.0-app/
