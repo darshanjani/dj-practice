@@ -12,6 +12,8 @@ buildNumber.properties
 .idea/
 .settings/
 *.iml
+*.ipr
+*.iws
 node_modules/
 bin/
 *.pyc
