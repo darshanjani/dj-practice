@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col">
+    <app-statistics [statsFor]="'Agreements'"></app-statistics>
+  </div>
+  <div class="col">
+    <app-statistics [statsFor]="'Feeds'"></app-statistics>
+  </div>
+  <div class="col">
+    <app-statistics [statsFor]="'Trades'"></app-statistics>
+  </div>
+</div>
+<app-statistics-detail 
+  (pageChange)="refreshData($event)" 
+  [nodes]="nodes"
+  [totalRecordCount]="totalRecordCount"
+></app-statistics-detail>

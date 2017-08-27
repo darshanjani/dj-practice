@@ -1,0 +1,10 @@
+name: Application.Darshan
+my:
+  secret: ${random.value}
+  servers:
+    - prod.server
+
+spring:
+  application:
+    admin:
+      enabled: false

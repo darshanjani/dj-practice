@@ -1,0 +1,42 @@
+<ng-template #customItemTemplate let-model="item" let-index="index">
+  <h5>{{ index + 1 }} - {{model.id}} - {{model.name}} ({{model.region}})</h5>
+</ng-template>
+
+<input [(ngModel)]="asyncSelected"
+       [typeahead]="dataSource"
+       (typeaheadLoading)="changeTypeaheadLoading($event)"
+       (typeaheadNoResults)="changeTypeaheadNoResults($event)"
+       (typeaheadOnSelect)="typeaheadOnSelect($event)"
+       typeaheadWaitMs="300"
+       typeaheadOptionField="name"
+       [typeaheadItemTemplate]="customItemTemplate"
+       placeholder="Search Anything..."
+       class="form-control">
+<div *ngIf="typeaheadLoading===true">
+    <i class="fa fa-refresh" aria-hidden="true"></i>    
+</div>
+<div *ngIf="typeaheadNoResults===true" class="">
+    <i class="fa fa-times" aria-hidden="true"></i> No Results Found
+</div>
+
+<span *ngIf="showTabs">
+<nav class="navbar-toggleable-md nav-tabs">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#searchNavBar" aria-controls="searchNavBar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="searchNavBar">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" [class.font-weight-bold]="currentComponent === 'feed'" (click)="navigateTo('feed')">Feed</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [class.font-weight-bold]="currentComponent === 'agreement'" (click)="navigateTo('agreement')">Agreement</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [class.font-weight-bold]="currentComponent === 'trade'" (click)="navigateTo('trade')">Trade</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</span>
+<router-outlet></router-outlet>

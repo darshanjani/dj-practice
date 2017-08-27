@@ -1,0 +1,1 @@
+mvn jacoco:dump -Djacoco.address=localhost -Djacoco.port=6300 -Djacoco.destFile=target/jacoco/jacoco.exec -Djacoco.append=false -Djacoco.reset=true
