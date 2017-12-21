@@ -1,0 +1,10 @@
+{  "namespace": "com.dj.kafkatests.model.employeev1",
+  "type": "record",
+  "name": "Employee",
+  "fields": [
+      {"name": "fName", "type": "string"},
+      {"name": "lName", "type": "string"},
+      {"name": "age",  "type": "int"},
+      {"name": "phoneNumber",  "type": "string"}
+  ]
+}
