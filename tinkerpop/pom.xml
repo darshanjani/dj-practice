@@ -5,7 +5,10 @@
 	<groupId>com.dj</groupId>
 	<artifactId>tinkerpop</artifactId>
 	<version>1.0</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>fitnessetests</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

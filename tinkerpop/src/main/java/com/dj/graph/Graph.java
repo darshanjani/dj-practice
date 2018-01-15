@@ -22,9 +22,17 @@ public class Graph {
 		repo.put(node, node);
 	}
 
+	public void removeVertex(Node node) {
+		repo.remove(node);
+	}
+
 	public Stream<Node> hasLabel(String type) {
 		return repo.values().parallelStream()
 				.filter(node -> node.getType().equals(type));
+	}
+
+	public long size() {
+		return repo.size();
 	}
 
 	public Optional<Node> getNode(String cobDate, String type, String id) {

@@ -1,20 +1,18 @@
 package com.dj.model;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
  * Created by Darshan on 7/2/2017.
  */
-public class Node extends HashMap<String, Object> {
+public class Node {
 
 	private String cobDate;
 	private String type;
 	private String id;
 	private boolean available = false;
+	Map<String, Object> data = new HashMap<>();
 	private Set<Relationship> out = new HashSet<>();
 	private Set<Relationship> in = new HashSet<>();
 
