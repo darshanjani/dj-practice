@@ -1,0 +1,85 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>Network | Basic usage</title>
+
+  <script type="text/javascript" src="dist/vis.js"></script>
+  <link href="dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    #mynetwork {
+      width: 600px;
+      height: 400px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+<body>
+
+<p>
+  Create a simple network with some nodes and edges.
+</p>
+
+<p>Search Node: <input type="text" id="nodeSearchText" value=""></p>
+<button onclick="myFunction()">Try it</button>
+
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+  // create an array with nodes
+  var nodesArray = [
+    {id: 1, label: 'MarginRunPrep'},
+    {id: 2, label: 'Calculator_Prep'},
+    {id: 3, label: 'Invoke_Calculator'},
+    {id: 4, label: 'Report_Ftp'},
+    {id: 5, label: 'Report_Email'},
+    {id: 6, label: 'Summary_Run_Complete'},
+    {id: 7, label: 'Run_Is_Complete', color: '#00ff99'}
+  ]
+  var nodes = new vis.DataSet(nodesArray);
+
+  // create an array with edges
+  var edges = new vis.DataSet([
+    {from: 2, to: 1, arrows:'to'},
+    {from: 3, to: 2, arrows:'to'},
+    {from: 4, to: 3, arrows:'to', dashes:true},
+    {from: 5, to: 3, arrows:'to', dashes:true},
+    {from: 6, to: 4, arrows:'to'},
+    {from: 6, to: 5, arrows:'to'},
+    {from: 6, to: 7, arrows:'to'}
+  ]);
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {};
+  var network = new vis.Network(container, data, options);
+  // network.selectNodes([6], true);
+
+  function checkAdult(age) {
+    return age >= document.getElementById("ageToCheck").value;
+  }
+
+  function myFunction() {
+    var searchFor = document.getElementById("nodeSearchText").value;
+    console.log("Searching for: " + searchFor);
+    var selectedNodes = [];
+    for (var i = 0; i < nodesArray.length; i++) {
+      console.log("Searching: " + nodesArray[i].label);
+      if (nodesArray[i].label.toLowerCase().includes(searchFor.toLowerCase())) {
+        console.log("Matching: " + nodesArray[i].label);
+        selectedNodes.push(nodesArray[i].id);
+      }
+    }
+    network.selectNodes(selectedNodes, true);
+  }
+
+</script>
+
+
+</body>
+</html>
