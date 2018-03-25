@@ -66,24 +66,24 @@ public class LargeController {
 					largeObjects.get(idx).setRecordNum(idx);
 					blob.setContext_id("MyContext");
 					blob.setRecord_num(idx);
-					System.out.println(largeObjects.get(idx));
+//					System.out.println(largeObjects.get(idx));
 					Output output = null;
-					Output output2 = null;
-					try {
-						output2 = new Output(new FileOutputStream("c:\\Users\\darsh\\Downloads\\obj.dat"));
-					} catch (FileNotFoundException e) {
-						e.printStackTrace();
-					}
+//					Output output2 = null;
+//					try {
+//						output2 = new Output(new FileOutputStream("c:\\Users\\darsh\\Downloads\\obj.dat"));
+//					} catch (FileNotFoundException e) {
+//						e.printStackTrace();
+//					}
 					output = new Output(new ByteArrayOutputStream(), 8092);
 					kryo.writeObject(output, largeObjects.get(idx));
-					kryo.writeObject(output2, largeObjects.get(idx));
+//					kryo.writeObject(output2, largeObjects.get(idx));
 					compare = largeObjects.get(idx);
 					output.flush();
-					output2.flush();
-					System.out.println("Buffer length: " + ((ByteArrayOutputStream)output.getOutputStream()).size());
+//					output2.flush();
+//					System.out.println("Buffer length: " + ((ByteArrayOutputStream)output.getOutputStream()).size());
 					byte[] bytes = ((ByteArrayOutputStream)output.getOutputStream()).toByteArray();
-					System.out.println("Bytes length: " + bytes.length);
-					System.out.println("Actual bytes: " + new String(bytes));
+//					System.out.println("Bytes length: " + bytes.length);
+//					System.out.println("Actual bytes: " + new String(bytes));
 //					ByteBuffer byteBuffer = ByteBuffer.allocate(bytes.length);
 //					byteBuffer.put(bytes);
 					ByteBuffer byteBuffer = ByteBuffer.wrap(bytes);
