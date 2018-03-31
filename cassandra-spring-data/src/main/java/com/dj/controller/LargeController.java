@@ -7,16 +7,22 @@ import com.dj.model.LargeBlob;
 import com.dj.model.LargeObject;
 import com.dj.repo.LargeBlobAccessor;
 import com.esotericsoftware.kryo.Kryo;
-import com.esotericsoftware.kryo.io.*;
+import com.esotericsoftware.kryo.io.ByteBufferOutput;
+import com.esotericsoftware.kryo.io.Input;
+import com.esotericsoftware.kryo.io.Output;
 import io.github.benas.randombeans.EnhancedRandomBuilder;
 import io.github.benas.randombeans.api.EnhancedRandom;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.SerializationUtils;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +36,8 @@ public class LargeController {
 	private MappingManager mappingManager;
 
 	private LargeObject compare = null;
+	private String contextId = null;
+
 	@GetMapping("/large/insert/{size}")
 	public String insertLargeObjects(@PathVariable int size) {
 		EnhancedRandom enhancedRandom = EnhancedRandomBuilder.aNewEnhancedRandom();
@@ -59,34 +67,20 @@ public class LargeController {
 		Mapper<LargeBlob> mapper = mappingManager.mapper(LargeBlob.class);
 		List<LargeObject> largeObjects = enhancedRandom.randomStreamOf(size, LargeObject.class).collect(Collectors.toList());
 		List<LargeBlob> blobs = new ArrayList<>(largeObjects.size());
+		compare = largeObjects.get(0);
 		IntStream.range(0, largeObjects.size())
 				.forEach(idx -> {
 					LargeBlob blob = new LargeBlob();
-					largeObjects.get(idx).setContextId("MyContext");
+//					largeObjects.get(idx).setContextId("MyContext");
 					largeObjects.get(idx).setRecordNum(idx);
-					blob.setContext_id("MyContext");
+					contextId = largeObjects.get(idx).getContextId();
+					blob.setContext_id(contextId);
 					blob.setRecord_num(idx);
-//					System.out.println(largeObjects.get(idx));
-					Output output = null;
-//					Output output2 = null;
-//					try {
-//						output2 = new Output(new FileOutputStream("c:\\Users\\darsh\\Downloads\\obj.dat"));
-//					} catch (FileNotFoundException e) {
-//						e.printStackTrace();
-//					}
-					output = new Output(new ByteArrayOutputStream(), 8092);
-					kryo.writeObject(output, largeObjects.get(idx));
-//					kryo.writeObject(output2, largeObjects.get(idx));
-					compare = largeObjects.get(idx);
-					output.flush();
-//					output2.flush();
-//					System.out.println("Buffer length: " + ((ByteArrayOutputStream)output.getOutputStream()).size());
-					byte[] bytes = ((ByteArrayOutputStream)output.getOutputStream()).toByteArray();
-//					System.out.println("Bytes length: " + bytes.length);
-//					System.out.println("Actual bytes: " + new String(bytes));
-//					ByteBuffer byteBuffer = ByteBuffer.allocate(bytes.length);
-//					byteBuffer.put(bytes);
+//					byte[] bytes = objectToBytesUsingKryo(kryo, largeObjects.get(idx));
+					byte[] bytes = objectToByteBufferUsingKryo(kryo, largeObjects.get(idx));
 					ByteBuffer byteBuffer = ByteBuffer.wrap(bytes);
+					System.out.println("Size: " + bytes.length);
+					System.out.println("ContextId: " + contextId);
 					blob.setObject(byteBuffer);
 					blobs.add(blob);
 				});
@@ -94,6 +88,7 @@ public class LargeController {
 		stopWatch.start();
 		IntStream.range(0, blobs.size())
 				.forEach(idx -> {
+					System.out.println("Saving: " + blobs.get(idx).getContext_id());
 					mapper.save(blobs.get(idx));
 				});
 		stopWatch.stop();
@@ -113,19 +108,63 @@ public class LargeController {
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
 
-		LargeBlob blob1 = accessor.getOne("MyContext", 0);
+		LargeBlob blob1 = accessor.getOne(contextId, 0);
 		ByteBuffer object = blob1.getObject();
 		System.out.println("context: " + blob1.getContext_id());
 		System.out.println("Size of buffer: " + object.remaining());
-		FileOutputStream fos = new FileOutputStream("c:\\Users\\darsh\\Downloads\\obj2.dat");
+//		FileOutputStream fos = new FileOutputStream("c:\\Users\\darsh\\Downloads\\obj2.dat");
 		byte[] bytes = Bytes.getArray(object);
 //		object.get(bytes);
-		fos.write(bytes);
-		fos.flush();
-		fos.close();
+//		fos.write(bytes);
+//		fos.flush();
+//		fos.close();
 		Input input = new Input(bytes);
 		LargeObject largeObject = kryo.readObject(input, LargeObject.class);
 		stopWatch.stop();
 		return "Read " + largeObject.equals(compare) + " object in " + stopWatch.prettyPrint();
+	}
+
+	@GetMapping("/large/javaVsKryo/{size}")
+	public String javaVsKryoSerialization(@PathVariable int size) {
+		EnhancedRandom enhancedRandom = EnhancedRandomBuilder.aNewEnhancedRandom();
+		List<LargeObject> largeObjects = enhancedRandom.randomStreamOf(size, LargeObject.class).collect(Collectors.toList());
+
+		StopWatch stopWatch = new StopWatch();
+		stopWatch.start("Kryo object creation");
+		Kryo kryo = new Kryo();
+		stopWatch.stop();
+		stopWatch.start(size  + " kryo object serialization");
+		largeObjects.stream().forEach(largeObject -> {
+			byte[] bytes = objectToBytesUsingKryo(kryo, largeObject);
+		});
+		stopWatch.stop();
+		stopWatch.start(size + " java object serialization");
+		largeObjects.stream().forEach(largeObject -> {
+			try {
+				byte[] bytes = objectToBytesUsingJava(largeObject);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		});
+		stopWatch.stop();
+		return stopWatch.prettyPrint();
+	}
+
+	private byte[] objectToBytesUsingKryo(Kryo kryo, LargeObject largeObject) {
+		Output output = new Output(new ByteArrayOutputStream());
+		kryo.writeObject(output, largeObject);
+		output.flush();
+		return ((ByteArrayOutputStream) output.getOutputStream()).toByteArray();
+	}
+
+	private byte[] objectToByteBufferUsingKryo(Kryo kryo, LargeObject largeObject) {
+		ByteBufferOutput output = new ByteBufferOutput(4096, -1);
+		kryo.writeObject(output, largeObject);
+//		output.flush();
+		return output.toBytes();
+	}
+
+	private byte[] objectToBytesUsingJava(LargeObject largeObject) throws IOException {
+		return SerializationUtils.serialize(largeObject);
 	}
 }

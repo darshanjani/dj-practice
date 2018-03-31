@@ -4,9 +4,7 @@ import com.datastax.driver.mapping.annotations.ClusteringColumn;
 import com.datastax.driver.mapping.annotations.Column;
 import com.datastax.driver.mapping.annotations.PartitionKey;
 import com.datastax.driver.mapping.annotations.Table;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -15,6 +13,7 @@ import java.math.BigInteger;
 @Data
 @ToString
 @EqualsAndHashCode
+@NoArgsConstructor
 @Table(name = "large_object_expanded", keyspace = "darshan")
 public class LargeObject implements Serializable {
 	@PartitionKey
