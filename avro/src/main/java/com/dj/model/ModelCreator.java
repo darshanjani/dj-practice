@@ -1,5 +1,7 @@
 package com.dj.model;
 
+import io.github.benas.randombeans.api.EnhancedRandom;
+
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -16,8 +18,8 @@ public class ModelCreator {
 		composition.setComp2("comp1.2");
 		actual.setComposition(composition);
 		Composition composition2 = new Composition();
-		composition.setComp1("comp2.1");
-		composition.setComp2("comp2.2");
+		composition2.setComp1("comp2.1");
+		composition2.setComp2("comp2.2");
 		List<Composition> compositions = Arrays.asList(composition, composition2);
 		actual.setCompositions(compositions);
 		actual.setBase1("base1");
@@ -34,5 +36,9 @@ public class ModelCreator {
 		actual.setSuper2("super2");
 		actual.setSuper3("super3");
 		return actual;
+	}
+
+	public static LargeObject createLargeObject() {
+		return EnhancedRandom.random(LargeObject.class);
 	}
 }

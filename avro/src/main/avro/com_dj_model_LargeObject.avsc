@@ -1,0 +1,1215 @@
+{
+  "namespace": "com.dj.model.avro",
+  "name": "LargeObjectAvro",
+  "type": "record",
+  "fields": [
+    {
+      "name": "contextId",
+      "type": "string"
+    },
+    {
+      "name": "recordNum",
+      "type": "int"
+    },
+    {
+      "name": "var1",
+      "type": "int"
+    },
+    {
+      "name": "var2",
+      "type": "boolean"
+    },
+    {
+      "name": "var3",
+      "type": "double"
+    },
+    {
+      "name": "var4",
+      "type": "double"
+    },
+    {
+      "name": "var5",
+      "type": "float"
+    },
+    {
+      "name": "var6",
+      "type": "int"
+    },
+    {
+      "name": "var7",
+      "type": "int"
+    },
+    {
+      "name": "var8",
+      "type": "string"
+    },
+    {
+      "name": "var9",
+      "type": "string"
+    },
+    {
+      "name": "var10",
+      "type": "int"
+    },
+    {
+      "name": "var11",
+      "type": "boolean"
+    },
+    {
+      "name": "var12",
+      "type": "double"
+    },
+    {
+      "name": "var13",
+      "type": "double"
+    },
+    {
+      "name": "var14",
+      "type": "float"
+    },
+    {
+      "name": "var15",
+      "type": "int"
+    },
+    {
+      "name": "var16",
+      "type": "int"
+    },
+    {
+      "name": "var17",
+      "type": "string"
+    },
+    {
+      "name": "var18",
+      "type": "string"
+    },
+    {
+      "name": "var19",
+      "type": "int"
+    },
+    {
+      "name": "var20",
+      "type": "boolean"
+    },
+    {
+      "name": "var21",
+      "type": "double"
+    },
+    {
+      "name": "var22",
+      "type": "double"
+    },
+    {
+      "name": "var23",
+      "type": "float"
+    },
+    {
+      "name": "var24",
+      "type": "int"
+    },
+    {
+      "name": "var25",
+      "type": "int"
+    },
+    {
+      "name": "var26",
+      "type": "string"
+    },
+    {
+      "name": "var27",
+      "type": "string"
+    },
+    {
+      "name": "var28",
+      "type": "int"
+    },
+    {
+      "name": "var29",
+      "type": "boolean"
+    },
+    {
+      "name": "var30",
+      "type": "double"
+    },
+    {
+      "name": "var31",
+      "type": "double"
+    },
+    {
+      "name": "var32",
+      "type": "float"
+    },
+    {
+      "name": "var33",
+      "type": "int"
+    },
+    {
+      "name": "var34",
+      "type": "int"
+    },
+    {
+      "name": "var35",
+      "type": "string"
+    },
+    {
+      "name": "var36",
+      "type": "string"
+    },
+    {
+      "name": "var37",
+      "type": "int"
+    },
+    {
+      "name": "var38",
+      "type": "boolean"
+    },
+    {
+      "name": "var39",
+      "type": "double"
+    },
+    {
+      "name": "var40",
+      "type": "double"
+    },
+    {
+      "name": "var41",
+      "type": "float"
+    },
+    {
+      "name": "var42",
+      "type": "int"
+    },
+    {
+      "name": "var43",
+      "type": "int"
+    },
+    {
+      "name": "var44",
+      "type": "string"
+    },
+    {
+      "name": "var45",
+      "type": "string"
+    },
+    {
+      "name": "var46",
+      "type": "int"
+    },
+    {
+      "name": "var47",
+      "type": "boolean"
+    },
+    {
+      "name": "var48",
+      "type": "double"
+    },
+    {
+      "name": "var49",
+      "type": "double"
+    },
+    {
+      "name": "var50",
+      "type": "float"
+    },
+    {
+      "name": "var51",
+      "type": "int"
+    },
+    {
+      "name": "var52",
+      "type": "int"
+    },
+    {
+      "name": "var53",
+      "type": "string"
+    },
+    {
+      "name": "var54",
+      "type": "string"
+    },
+    {
+      "name": "var55",
+      "type": "int"
+    },
+    {
+      "name": "var56",
+      "type": "boolean"
+    },
+    {
+      "name": "var57",
+      "type": "double"
+    },
+    {
+      "name": "var58",
+      "type": "double"
+    },
+    {
+      "name": "var59",
+      "type": "float"
+    },
+    {
+      "name": "var60",
+      "type": "int"
+    },
+    {
+      "name": "var61",
+      "type": "int"
+    },
+    {
+      "name": "var62",
+      "type": "string"
+    },
+    {
+      "name": "var63",
+      "type": "string"
+    },
+    {
+      "name": "var64",
+      "type": "int"
+    },
+    {
+      "name": "var65",
+      "type": "boolean"
+    },
+    {
+      "name": "var66",
+      "type": "double"
+    },
+    {
+      "name": "var67",
+      "type": "double"
+    },
+    {
+      "name": "var68",
+      "type": "float"
+    },
+    {
+      "name": "var69",
+      "type": "int"
+    },
+    {
+      "name": "var70",
+      "type": "int"
+    },
+    {
+      "name": "var71",
+      "type": "string"
+    },
+    {
+      "name": "var72",
+      "type": "string"
+    },
+    {
+      "name": "var73",
+      "type": "int"
+    },
+    {
+      "name": "var74",
+      "type": "boolean"
+    },
+    {
+      "name": "var75",
+      "type": "double"
+    },
+    {
+      "name": "var76",
+      "type": "double"
+    },
+    {
+      "name": "var77",
+      "type": "float"
+    },
+    {
+      "name": "var78",
+      "type": "int"
+    },
+    {
+      "name": "var79",
+      "type": "int"
+    },
+    {
+      "name": "var80",
+      "type": "string"
+    },
+    {
+      "name": "var81",
+      "type": "string"
+    },
+    {
+      "name": "var82",
+      "type": "int"
+    },
+    {
+      "name": "var83",
+      "type": "boolean"
+    },
+    {
+      "name": "var84",
+      "type": "double"
+    },
+    {
+      "name": "var85",
+      "type": "double"
+    },
+    {
+      "name": "var86",
+      "type": "float"
+    },
+    {
+      "name": "var87",
+      "type": "int"
+    },
+    {
+      "name": "var88",
+      "type": "int"
+    },
+    {
+      "name": "var89",
+      "type": "string"
+    },
+    {
+      "name": "var90",
+      "type": "string"
+    },
+    {
+      "name": "var91",
+      "type": "int"
+    },
+    {
+      "name": "var92",
+      "type": "boolean"
+    },
+    {
+      "name": "var93",
+      "type": "double"
+    },
+    {
+      "name": "var94",
+      "type": "double"
+    },
+    {
+      "name": "var95",
+      "type": "float"
+    },
+    {
+      "name": "var96",
+      "type": "int"
+    },
+    {
+      "name": "var97",
+      "type": "int"
+    },
+    {
+      "name": "var98",
+      "type": "string"
+    },
+    {
+      "name": "var99",
+      "type": "string"
+    },
+    {
+      "name": "var100",
+      "type": "int"
+    },
+    {
+      "name": "var101",
+      "type": "boolean"
+    },
+    {
+      "name": "var102",
+      "type": "double"
+    },
+    {
+      "name": "var103",
+      "type": "double"
+    },
+    {
+      "name": "var104",
+      "type": "float"
+    },
+    {
+      "name": "var105",
+      "type": "int"
+    },
+    {
+      "name": "var106",
+      "type": "int"
+    },
+    {
+      "name": "var107",
+      "type": "string"
+    },
+    {
+      "name": "var108",
+      "type": "string"
+    },
+    {
+      "name": "var109",
+      "type": "int"
+    },
+    {
+      "name": "var110",
+      "type": "boolean"
+    },
+    {
+      "name": "var111",
+      "type": "double"
+    },
+    {
+      "name": "var112",
+      "type": "double"
+    },
+    {
+      "name": "var113",
+      "type": "float"
+    },
+    {
+      "name": "var114",
+      "type": "int"
+    },
+    {
+      "name": "var115",
+      "type": "int"
+    },
+    {
+      "name": "var116",
+      "type": "string"
+    },
+    {
+      "name": "var117",
+      "type": "string"
+    },
+    {
+      "name": "var118",
+      "type": "int"
+    },
+    {
+      "name": "var119",
+      "type": "boolean"
+    },
+    {
+      "name": "var120",
+      "type": "double"
+    },
+    {
+      "name": "var121",
+      "type": "double"
+    },
+    {
+      "name": "var122",
+      "type": "float"
+    },
+    {
+      "name": "var123",
+      "type": "int"
+    },
+    {
+      "name": "var124",
+      "type": "int"
+    },
+    {
+      "name": "var125",
+      "type": "string"
+    },
+    {
+      "name": "var126",
+      "type": "string"
+    },
+    {
+      "name": "var127",
+      "type": "int"
+    },
+    {
+      "name": "var128",
+      "type": "boolean"
+    },
+    {
+      "name": "var129",
+      "type": "double"
+    },
+    {
+      "name": "var130",
+      "type": "double"
+    },
+    {
+      "name": "var131",
+      "type": "float"
+    },
+    {
+      "name": "var132",
+      "type": "int"
+    },
+    {
+      "name": "var133",
+      "type": "int"
+    },
+    {
+      "name": "var134",
+      "type": "string"
+    },
+    {
+      "name": "var135",
+      "type": "string"
+    },
+    {
+      "name": "var136",
+      "type": "int"
+    },
+    {
+      "name": "var137",
+      "type": "boolean"
+    },
+    {
+      "name": "var138",
+      "type": "double"
+    },
+    {
+      "name": "var139",
+      "type": "double"
+    },
+    {
+      "name": "var140",
+      "type": "float"
+    },
+    {
+      "name": "var141",
+      "type": "int"
+    },
+    {
+      "name": "var142",
+      "type": "int"
+    },
+    {
+      "name": "var143",
+      "type": "string"
+    },
+    {
+      "name": "var144",
+      "type": "string"
+    },
+    {
+      "name": "var145",
+      "type": "int"
+    },
+    {
+      "name": "var146",
+      "type": "boolean"
+    },
+    {
+      "name": "var147",
+      "type": "double"
+    },
+    {
+      "name": "var148",
+      "type": "double"
+    },
+    {
+      "name": "var149",
+      "type": "float"
+    },
+    {
+      "name": "var150",
+      "type": "int"
+    },
+    {
+      "name": "var151",
+      "type": "int"
+    },
+    {
+      "name": "var152",
+      "type": "string"
+    },
+    {
+      "name": "var153",
+      "type": "string"
+    },
+    {
+      "name": "var154",
+      "type": "int"
+    },
+    {
+      "name": "var155",
+      "type": "boolean"
+    },
+    {
+      "name": "var156",
+      "type": "double"
+    },
+    {
+      "name": "var157",
+      "type": "double"
+    },
+    {
+      "name": "var158",
+      "type": "float"
+    },
+    {
+      "name": "var159",
+      "type": "int"
+    },
+    {
+      "name": "var160",
+      "type": "int"
+    },
+    {
+      "name": "var161",
+      "type": "string"
+    },
+    {
+      "name": "var162",
+      "type": "string"
+    },
+    {
+      "name": "var163",
+      "type": "int"
+    },
+    {
+      "name": "var164",
+      "type": "boolean"
+    },
+    {
+      "name": "var165",
+      "type": "double"
+    },
+    {
+      "name": "var166",
+      "type": "double"
+    },
+    {
+      "name": "var167",
+      "type": "float"
+    },
+    {
+      "name": "var168",
+      "type": "int"
+    },
+    {
+      "name": "var169",
+      "type": "int"
+    },
+    {
+      "name": "var170",
+      "type": "string"
+    },
+    {
+      "name": "var171",
+      "type": "string"
+    },
+    {
+      "name": "var172",
+      "type": "int"
+    },
+    {
+      "name": "var173",
+      "type": "boolean"
+    },
+    {
+      "name": "var174",
+      "type": "double"
+    },
+    {
+      "name": "var175",
+      "type": "double"
+    },
+    {
+      "name": "var176",
+      "type": "float"
+    },
+    {
+      "name": "var177",
+      "type": "int"
+    },
+    {
+      "name": "var178",
+      "type": "int"
+    },
+    {
+      "name": "var179",
+      "type": "string"
+    },
+    {
+      "name": "var180",
+      "type": "string"
+    },
+    {
+      "name": "var181",
+      "type": "int"
+    },
+    {
+      "name": "var182",
+      "type": "boolean"
+    },
+    {
+      "name": "var183",
+      "type": "double"
+    },
+    {
+      "name": "var184",
+      "type": "double"
+    },
+    {
+      "name": "var185",
+      "type": "float"
+    },
+    {
+      "name": "var186",
+      "type": "int"
+    },
+    {
+      "name": "var187",
+      "type": "int"
+    },
+    {
+      "name": "var188",
+      "type": "string"
+    },
+    {
+      "name": "var189",
+      "type": "string"
+    },
+    {
+      "name": "var190",
+      "type": "int"
+    },
+    {
+      "name": "var191",
+      "type": "boolean"
+    },
+    {
+      "name": "var192",
+      "type": "double"
+    },
+    {
+      "name": "var193",
+      "type": "double"
+    },
+    {
+      "name": "var194",
+      "type": "float"
+    },
+    {
+      "name": "var195",
+      "type": "int"
+    },
+    {
+      "name": "var196",
+      "type": "int"
+    },
+    {
+      "name": "var197",
+      "type": "string"
+    },
+    {
+      "name": "var198",
+      "type": "string"
+    },
+    {
+      "name": "var199",
+      "type": "int"
+    },
+    {
+      "name": "var200",
+      "type": "boolean"
+    },
+    {
+      "name": "var201",
+      "type": "double"
+    },
+    {
+      "name": "var202",
+      "type": "double"
+    },
+    {
+      "name": "var203",
+      "type": "float"
+    },
+    {
+      "name": "var204",
+      "type": "int"
+    },
+    {
+      "name": "var205",
+      "type": "int"
+    },
+    {
+      "name": "var206",
+      "type": "string"
+    },
+    {
+      "name": "var207",
+      "type": "string"
+    },
+    {
+      "name": "var208",
+      "type": "int"
+    },
+    {
+      "name": "var209",
+      "type": "boolean"
+    },
+    {
+      "name": "var210",
+      "type": "double"
+    },
+    {
+      "name": "var211",
+      "type": "double"
+    },
+    {
+      "name": "var212",
+      "type": "float"
+    },
+    {
+      "name": "var213",
+      "type": "int"
+    },
+    {
+      "name": "var214",
+      "type": "int"
+    },
+    {
+      "name": "var215",
+      "type": "string"
+    },
+    {
+      "name": "var216",
+      "type": "string"
+    },
+    {
+      "name": "var217",
+      "type": "int"
+    },
+    {
+      "name": "var218",
+      "type": "boolean"
+    },
+    {
+      "name": "var219",
+      "type": "double"
+    },
+    {
+      "name": "var220",
+      "type": "double"
+    },
+    {
+      "name": "var221",
+      "type": "float"
+    },
+    {
+      "name": "var222",
+      "type": "int"
+    },
+    {
+      "name": "var223",
+      "type": "int"
+    },
+    {
+      "name": "var224",
+      "type": "string"
+    },
+    {
+      "name": "var225",
+      "type": "string"
+    },
+    {
+      "name": "var226",
+      "type": "int"
+    },
+    {
+      "name": "var227",
+      "type": "boolean"
+    },
+    {
+      "name": "var228",
+      "type": "double"
+    },
+    {
+      "name": "var229",
+      "type": "double"
+    },
+    {
+      "name": "var230",
+      "type": "float"
+    },
+    {
+      "name": "var231",
+      "type": "int"
+    },
+    {
+      "name": "var232",
+      "type": "int"
+    },
+    {
+      "name": "var233",
+      "type": "string"
+    },
+    {
+      "name": "var234",
+      "type": "string"
+    },
+    {
+      "name": "var235",
+      "type": "int"
+    },
+    {
+      "name": "var236",
+      "type": "boolean"
+    },
+    {
+      "name": "var237",
+      "type": "double"
+    },
+    {
+      "name": "var238",
+      "type": "double"
+    },
+    {
+      "name": "var239",
+      "type": "float"
+    },
+    {
+      "name": "var240",
+      "type": "int"
+    },
+    {
+      "name": "var241",
+      "type": "int"
+    },
+    {
+      "name": "var242",
+      "type": "string"
+    },
+    {
+      "name": "var243",
+      "type": "string"
+    },
+    {
+      "name": "var244",
+      "type": "int"
+    },
+    {
+      "name": "var245",
+      "type": "boolean"
+    },
+    {
+      "name": "var246",
+      "type": "double"
+    },
+    {
+      "name": "var247",
+      "type": "double"
+    },
+    {
+      "name": "var248",
+      "type": "float"
+    },
+    {
+      "name": "var249",
+      "type": "int"
+    },
+    {
+      "name": "var250",
+      "type": "int"
+    },
+    {
+      "name": "var251",
+      "type": "string"
+    },
+    {
+      "name": "var252",
+      "type": "string"
+    },
+    {
+      "name": "var253",
+      "type": "int"
+    },
+    {
+      "name": "var254",
+      "type": "boolean"
+    },
+    {
+      "name": "var255",
+      "type": "double"
+    },
+    {
+      "name": "var256",
+      "type": "double"
+    },
+    {
+      "name": "var257",
+      "type": "float"
+    },
+    {
+      "name": "var258",
+      "type": "int"
+    },
+    {
+      "name": "var259",
+      "type": "int"
+    },
+    {
+      "name": "var260",
+      "type": "string"
+    },
+    {
+      "name": "var261",
+      "type": "string"
+    },
+    {
+      "name": "var262",
+      "type": "int"
+    },
+    {
+      "name": "var263",
+      "type": "boolean"
+    },
+    {
+      "name": "var264",
+      "type": "double"
+    },
+    {
+      "name": "var265",
+      "type": "double"
+    },
+    {
+      "name": "var266",
+      "type": "float"
+    },
+    {
+      "name": "var267",
+      "type": "int"
+    },
+    {
+      "name": "var268",
+      "type": "int"
+    },
+    {
+      "name": "var269",
+      "type": "string"
+    },
+    {
+      "name": "var270",
+      "type": "string"
+    },
+    {
+      "name": "var271",
+      "type": "int"
+    },
+    {
+      "name": "var272",
+      "type": "boolean"
+    },
+    {
+      "name": "var273",
+      "type": "double"
+    },
+    {
+      "name": "var274",
+      "type": "double"
+    },
+    {
+      "name": "var275",
+      "type": "float"
+    },
+    {
+      "name": "var276",
+      "type": "int"
+    },
+    {
+      "name": "var277",
+      "type": "int"
+    },
+    {
+      "name": "var278",
+      "type": "string"
+    },
+    {
+      "name": "var279",
+      "type": "string"
+    },
+    {
+      "name": "var280",
+      "type": "int"
+    },
+    {
+      "name": "var281",
+      "type": "boolean"
+    },
+    {
+      "name": "var282",
+      "type": "double"
+    },
+    {
+      "name": "var283",
+      "type": "double"
+    },
+    {
+      "name": "var284",
+      "type": "float"
+    },
+    {
+      "name": "var285",
+      "type": "int"
+    },
+    {
+      "name": "var286",
+      "type": "int"
+    },
+    {
+      "name": "var287",
+      "type": "string"
+    },
+    {
+      "name": "var288",
+      "type": "string"
+    },
+    {
+      "name": "var289",
+      "type": "int"
+    },
+    {
+      "name": "var290",
+      "type": "boolean"
+    },
+    {
+      "name": "var291",
+      "type": "double"
+    },
+    {
+      "name": "var292",
+      "type": "double"
+    },
+    {
+      "name": "var293",
+      "type": "float"
+    },
+    {
+      "name": "var294",
+      "type": "int"
+    },
+    {
+      "name": "var295",
+      "type": "int"
+    },
+    {
+      "name": "var296",
+      "type": "string"
+    },
+    {
+      "name": "var297",
+      "type": "string"
+    },
+    {
+      "name": "var298",
+      "type": "int"
+    },
+    {
+      "name": "var299",
+      "type": "boolean"
+    },
+    {
+      "name": "var300",
+      "type": "double"
+    }
+  ]
+}

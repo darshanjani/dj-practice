@@ -2,6 +2,7 @@ package com.dj.avrocreator;
 
 import com.dj.model.Actual;
 import com.dj.model.Composition;
+import com.dj.model.LargeObject;
 import org.apache.avro.Schema;
 import org.apache.avro.reflect.ReflectData;
 import org.apache.commons.io.FileUtils;
@@ -19,19 +20,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AvroSchemaCreator {
+
+	public static final String MODEL_PACKAGE = "com.dj.model.avro";
+
 	public static void main(String[] args) throws Exception {
 		new AvroSchemaCreator().startProcessing();
 	}
 
 	public void startProcessing() throws Exception {
-		Class classToInspect = Actual.class;
-		String packageToGenerateAvroIn = "com.dj.model.avro";
-
+		Class classToInspect = LargeObject.class;
 
 		File newAvroSchemaFile = createNewAvroSchemaFile(classToInspect);
 		JSONObject jsonObject = new JSONObject();
 		String passedClass = classToInspect.getName();
-		jsonObject.put("namespace", packageToGenerateAvroIn);
+		jsonObject.put("namespace", MODEL_PACKAGE);
 		jsonObject.put("type", "record");
 		jsonObject.put("name", passedClass.substring(passedClass.lastIndexOf(".")+1) + "Avro");
 		List<JSONObject> fields = new ArrayList<>();
