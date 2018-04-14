@@ -1,0 +1,89 @@
+{
+  "namespace": "com.dj.model.avro",
+  "name": "ActualAvro",
+  "type": "record",
+  "fields": [
+    {
+      "name": "act1",
+      "type": "string"
+    },
+    {
+      "name": "act2",
+      "type": "string"
+    },
+    {
+      "name": "act3",
+      "type": "string"
+    },
+    {
+      "name": "act4",
+      "type": {
+        "logicalType": "date",
+        "type": "int"
+      }
+    },
+    {
+      "name": "composition",
+      "type": "CompositionAvro"
+    },
+    {
+      "name": "compositions",
+      "type": {
+        "type": "array",
+        "items": "CompositionAvro"
+      }
+    },
+    {
+      "name": "base1",
+      "type": "string"
+    },
+    {
+      "name": "base2",
+      "type": "int"
+    },
+    {
+      "name": "base3",
+      "type": "long"
+    },
+    {
+      "name": "base4",
+      "type": "double"
+    },
+    {
+      "name": "base5",
+      "type": "float"
+    },
+    {
+      "name": "base6",
+      "type": "boolean"
+    },
+    {
+      "name": "base7",
+      "type": "int"
+    },
+    {
+      "name": "base8",
+      "type": "long"
+    },
+    {
+      "name": "base9",
+      "type": "float"
+    },
+    {
+      "name": "base10",
+      "type": "double"
+    },
+    {
+      "name": "super1",
+      "type": "string"
+    },
+    {
+      "name": "super2",
+      "type": "string"
+    },
+    {
+      "name": "super3",
+      "type": "string"
+    }
+  ]
+}

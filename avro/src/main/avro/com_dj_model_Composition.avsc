@@ -1,0 +1,15 @@
+{
+  "namespace": "com.dj.model.avro",
+  "name": "CompositionAvro",
+  "type": "record",
+  "fields": [
+    {
+      "name": "comp1",
+      "type": "string"
+    },
+    {
+      "name": "comp2",
+      "type": "string"
+    }
+  ]
+}

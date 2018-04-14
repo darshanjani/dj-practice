@@ -1,0 +1,22 @@
+{
+  "namespace": "example.avro",
+  "type": "record",
+  "name": "Manager",
+  "fields": [
+    { "name": "manages", "type": {"type": "array", "items": "Employee"}
+      /*{
+        "namespace": "example.avro",
+        "type": "record",
+        "name": "Employee",
+        "fields": [
+          { "name": "name", "type": "string" },
+          { "name": "active", "type": "boolean" },
+          { "name": "sid", "type": "int" },
+          { "name": "ssn", "type": "long" },
+          { "name": "salary", "type": "double" },
+          { "name": "increment", "type": "float" }
+        ]
+      }*/
+    }
+  ]
+}
