@@ -18,8 +18,8 @@
     {
       "name": "act4",
       "type": {
-        "logicalType": "date",
-        "type": "int"
+        "logicalType": "timestamp-millis",
+        "type": "long"
       }
     },
     {

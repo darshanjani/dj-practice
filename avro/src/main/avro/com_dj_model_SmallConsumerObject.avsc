@@ -1,0 +1,55 @@
+{
+  "namespace": "com.dj.model.avro",
+  "name": "SmallConsumerObjectAvro",
+  "type": "record",
+  "fields": [
+    {
+      "name": "contextId",
+      "type": "string"
+    },
+    {
+      "name": "recordNum",
+      "type": "int"
+    },
+    {
+      "name": "var1",
+      "type": "int"
+    },
+    {
+      "name": "var2",
+      "type": "boolean"
+    },
+    {
+      "name": "var3",
+      "type": "double"
+    },
+    {
+      "name": "var4",
+      "type": "double"
+    },
+    {
+      "name": "var5",
+      "type": "float"
+    },
+    {
+      "name": "var6",
+      "type": "int"
+    },
+    {
+      "name": "var7",
+      "type": "int"
+    },
+    {
+      "name": "var8",
+      "type": "string"
+    },
+    {
+      "name": "var9",
+      "type": "string"
+    },
+    {
+      "name": "var10",
+      "type": "int"
+    }
+  ]
+}

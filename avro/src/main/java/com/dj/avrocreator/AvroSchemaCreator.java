@@ -3,6 +3,7 @@ package com.dj.avrocreator;
 import com.dj.model.Actual;
 import com.dj.model.Composition;
 import com.dj.model.LargeObject;
+import com.dj.model.SmallConsumerObject;
 import org.apache.avro.Schema;
 import org.apache.avro.reflect.ReflectData;
 import org.apache.commons.io.FileUtils;
@@ -28,7 +29,7 @@ public class AvroSchemaCreator {
 	}
 
 	public void startProcessing() throws Exception {
-		Class classToInspect = LargeObject.class;
+		Class classToInspect = SmallConsumerObject.class;
 
 		File newAvroSchemaFile = createNewAvroSchemaFile(classToInspect);
 		JSONObject jsonObject = new JSONObject();
@@ -79,8 +80,8 @@ public class AvroSchemaCreator {
 				type = "double"; break;
 			case "java.util.Date":
 				JSONObject dateType = new JSONObject();
-				dateType.put("type", "int");
-				dateType.put("logicalType", "date");
+				dateType.put("type", "long");
+				dateType.put("logicalType", "timestamp-millis");
 				type = dateType;
 				break;
 			case "java.util.List":
