@@ -5,1211 +5,2117 @@
   "fields": [
     {
       "name": "contextId",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "recordNum",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var1",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var2",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var3",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var4",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var5",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var6",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var7",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var8",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var9",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var10",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var11",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var12",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var13",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var14",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var15",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var16",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var17",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var18",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var19",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var20",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var21",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var22",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var23",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var24",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var25",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var26",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var27",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var28",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var29",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var30",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var31",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var32",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var33",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var34",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var35",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var36",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var37",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var38",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var39",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var40",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var41",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var42",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var43",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var44",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var45",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var46",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var47",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var48",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var49",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var50",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var51",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var52",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var53",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var54",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var55",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var56",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var57",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var58",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var59",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var60",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var61",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var62",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var63",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var64",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var65",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var66",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var67",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var68",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var69",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var70",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var71",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var72",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var73",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var74",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var75",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var76",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var77",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var78",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var79",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var80",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var81",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var82",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var83",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var84",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var85",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var86",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var87",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var88",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var89",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var90",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var91",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var92",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var93",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var94",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var95",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var96",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var97",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var98",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var99",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var100",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var101",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var102",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var103",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var104",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var105",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var106",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var107",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var108",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var109",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var110",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var111",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var112",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var113",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var114",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var115",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var116",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var117",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var118",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var119",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var120",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var121",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var122",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var123",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var124",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var125",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var126",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var127",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var128",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var129",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var130",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var131",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var132",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var133",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var134",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var135",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var136",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var137",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var138",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var139",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var140",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var141",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var142",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var143",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var144",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var145",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var146",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var147",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var148",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var149",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var150",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var151",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var152",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var153",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var154",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var155",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var156",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var157",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var158",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var159",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var160",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var161",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var162",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var163",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var164",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var165",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var166",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var167",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var168",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var169",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var170",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var171",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var172",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var173",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var174",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var175",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var176",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var177",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var178",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var179",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var180",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var181",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var182",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var183",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var184",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var185",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var186",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var187",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var188",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var189",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var190",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var191",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var192",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var193",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var194",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var195",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var196",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var197",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var198",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var199",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var200",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var201",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var202",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var203",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var204",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var205",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var206",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var207",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var208",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var209",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var210",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var211",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var212",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var213",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var214",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var215",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var216",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var217",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var218",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var219",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var220",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var221",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var222",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var223",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var224",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var225",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var226",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var227",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var228",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var229",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var230",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var231",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var232",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var233",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var234",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var235",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var236",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var237",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var238",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var239",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var240",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var241",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var242",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var243",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var244",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var245",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var246",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var247",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var248",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var249",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var250",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var251",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var252",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var253",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var254",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var255",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var256",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var257",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var258",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var259",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var260",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var261",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var262",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var263",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var264",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var265",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var266",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var267",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var268",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var269",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var270",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var271",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var272",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var273",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var274",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var275",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var276",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var277",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var278",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var279",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var280",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var281",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var282",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var283",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var284",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var285",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var286",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var287",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var288",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var289",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var290",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var291",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var292",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     },
     {
       "name": "var293",
-      "type": "float"
+      "type": [
+        "null",
+        "float"
+      ]
     },
     {
       "name": "var294",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var295",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var296",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var297",
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     {
       "name": "var298",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "var299",
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     {
       "name": "var300",
-      "type": "double"
+      "type": [
+        "null",
+        "double"
+      ]
     }
   ]
 }

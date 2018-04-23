@@ -16,12 +16,16 @@ public class ConsumerDrivenContract {
 		AvroEncoderDecoder avroEncoderDecoder = new AvroEncoderDecoder();
 
 		LargeObject largeObject = EnhancedRandom.random(LargeObject.class);
+//		largeObject.setVar1(null);
 		LargeObjectAvro largeObjectAvro = avroReflectionCopyUtils.deepCopy(largeObject, LargeObjectAvro.class);
 		byte[] bytes = avroEncoderDecoder.encodeAvroObjectToBytes(largeObjectAvro, LargeObjectAvro.getClassSchema());
-		System.out.println(largeObject);
+		System.out.println(largeObjectAvro);
 		SmallConsumerObjectAvro smallConsumerObjectAvro =
 				(SmallConsumerObjectAvro)avroEncoderDecoder.decodeBytesToAvroObject(
-					bytes, SmallConsumerObjectAvro.getClassSchema());
+						bytes,
+						LargeObjectAvro.getClassSchema(),
+						SmallConsumerObjectAvro.getClassSchema());
+		System.out.println(smallConsumerObjectAvro);
 		SmallConsumerObject smallConsumerObject = avroReflectionCopyUtils.deepCopy(
 				smallConsumerObjectAvro, SmallConsumerObject.class);
 		System.out.println(smallConsumerObject);

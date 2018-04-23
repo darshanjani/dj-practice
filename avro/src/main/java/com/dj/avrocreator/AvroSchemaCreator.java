@@ -9,6 +9,7 @@ import org.apache.avro.reflect.ReflectData;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.apache.commons.lang3.reflect.MethodUtils;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -58,6 +59,8 @@ public class AvroSchemaCreator {
 	private JSONObject getFieldType(Field field) {
 		JSONObject eachField = new JSONObject();
 		eachField.put("name", field.getName());
+		JSONArray types = new JSONArray();
+		types.put("null");
 
 		String fieldName = field.getType().getName();
 		Object type = null;
@@ -104,6 +107,7 @@ public class AvroSchemaCreator {
 				System.out.println("Default type being converted to Avro, please generate avsc manually: " + type);
 		}
 
+		types.put(type);
 		eachField.put("type", type);
 		return eachField;
 	}

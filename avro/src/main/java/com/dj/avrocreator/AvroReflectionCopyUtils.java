@@ -27,7 +27,7 @@ public class AvroReflectionCopyUtils {
 		System.out.println(actualAvro);
 	}
 
-	public <T> T deepCopy(Object copyFrom, Class<T> clazz) throws Exception {
+	public static <T> T deepCopy(Object copyFrom, Class<T> clazz) throws Exception {
 		Collection<Method> getterMethods = retrieveGetMethodsMap(copyFrom);
 		if (getterMethods.isEmpty()) {
 			System.err.println("Object of type: " + copyFrom.getClass().getName() + " does not contain any GETTER methods");
@@ -48,14 +48,14 @@ public class AvroReflectionCopyUtils {
 		return targetObject;
 	}
 
-	private String getSetterMethodNameFromGetterMethod(Method getMethod) {
+	private static String getSetterMethodNameFromGetterMethod(Method getMethod) {
 		String methodName = getMethod.getName();
 		if (methodName.startsWith("get")) return "set" + methodName.substring(3);
 		if (methodName.startsWith("is")) return "set" + methodName.substring(2);
 		return methodName;
 	}
 
-	private Collection<Method> retrieveGetMethodsMap(Object copyFrom) throws Exception {
+	private static Collection<Method> retrieveGetMethodsMap(Object copyFrom) throws Exception {
 		if (!classToGetterMethodMapping.containsKey(copyFrom.getClass().getName())) {
 			Map<String, Method> getMethodMap = new HashMap<>();
 			Method[] methods = copyFrom.getClass().getMethods();
@@ -69,7 +69,7 @@ public class AvroReflectionCopyUtils {
 		return classToGetterMethodMapping.get(copyFrom.getClass().getName()).values();
 	}
 
-	public Map<String, Method> getTargetClassSetterMap(Class targetClass) throws Exception {
+	public static Map<String, Method> getTargetClassSetterMap(Class targetClass) throws Exception {
 		String targetClassName = targetClass.getName();
 		if (!classToSetterMethodMapping.containsKey(targetClassName)) {
 			Map<String, Method> setMethodMap = new HashMap<>();
@@ -87,7 +87,7 @@ public class AvroReflectionCopyUtils {
 		return classToSetterMethodMapping.get(targetClassName);
 	}
 
-	private <T> void setValue(T targetObject, Method setterMethod, Object value) throws Exception {
+	private static <T> void setValue(T targetObject, Method setterMethod, Object value) throws Exception {
 		Class<?>[] setterMethodParameterTypes = setterMethod.getParameterTypes();
 		if (setterMethodParameterTypes == null) {
 			System.out.println("Skipping setter method since it has no parameters: " + setterMethod);
@@ -97,37 +97,65 @@ public class AvroReflectionCopyUtils {
 			System.out.println("Setter method contains more than params: " + setterMethod.toString());
 			return;
 		}
-		Class<?> aClass = setterMethodParameterTypes[0];
-		if (aClass.isAssignableFrom(CharSequence.class)
-				|| aClass.isAssignableFrom(String.class)
-				|| aClass.isAssignableFrom(Integer.class)
-				|| aClass.isAssignableFrom(Long.class)
-				|| aClass.isAssignableFrom(Float.class)
-				|| aClass.isAssignableFrom(Double.class)
-				|| aClass.isAssignableFrom(Boolean.class)
-				|| aClass.getName().equals("boolean")
-				|| aClass.getName().equals("float")
-				|| aClass.getName().equals("double")
-				|| aClass.getName().equals("long")
-				|| aClass.getName().equals("int")
+		Class<?> setterMethodParameterType = setterMethodParameterTypes[0];
+		if (setterMethodParameterType.isAssignableFrom(CharSequence.class)
+				|| setterMethodParameterType.isAssignableFrom(String.class)
+				|| setterMethodParameterType.isAssignableFrom(Boolean.class)
+				|| setterMethodParameterType.getName().equals("boolean")
 				) {
 			if (value instanceof Utf8) {
 				value = new String(((Utf8) value).getBytes());
 				setterMethod.invoke(targetObject, value);
+			} else if (value instanceof Integer
+					|| value instanceof Long
+					|| value instanceof Float
+					|| value instanceof Double) {
+				setterMethod.invoke(targetObject, String.valueOf(value));
 			} else {
 				setterMethod.invoke(targetObject, value);
 			}
-
-		} else if (aClass.isAssignableFrom(DateTime.class)) {
+		} else if (setterMethodParameterType.isAssignableFrom(Integer.class)
+				|| setterMethodParameterType.getName().equals("int")) {
+			if (value instanceof Utf8) {
+				String valueStr = new String(((Utf8) value).getBytes());
+				setterMethod.invoke(targetObject, Integer.valueOf(valueStr));
+			} else {
+				setterMethod.invoke(targetObject, value);
+			}
+		} else if (setterMethodParameterType.isAssignableFrom(Long.class)
+				|| setterMethodParameterType.getName().equals("long")) {
+			if (value instanceof Utf8) {
+				String valueStr = new String(((Utf8) value).getBytes());
+				setterMethod.invoke(targetObject, Long.valueOf(valueStr));
+			} else {
+				setterMethod.invoke(targetObject, value);
+			}
+		} else if (setterMethodParameterType.isAssignableFrom(Float.class)
+				|| setterMethodParameterType.getName().equals("float")) {
+			if (value instanceof Utf8) {
+				String valueStr = new String(((Utf8) value).getBytes());
+				setterMethod.invoke(targetObject, Float.valueOf(valueStr));
+			} else {
+				setterMethod.invoke(targetObject, value);
+			}
+		} else if (setterMethodParameterType.isAssignableFrom(Double.class)
+				|| setterMethodParameterType.getName().equals("double")) {
+			if (value instanceof Utf8) {
+				String valueStr = new String(((Utf8) value).getBytes());
+				setterMethod.invoke(targetObject, Double.valueOf(valueStr));
+			} else {
+				setterMethod.invoke(targetObject, value);
+			}
+		} else if (setterMethodParameterType.isAssignableFrom(DateTime.class)) {
 			if (value instanceof Date) {
 				setterMethod.invoke(targetObject, new DateTime(value));
 			}
-		} else if (aClass.isAssignableFrom(Date.class)) {
+		} else if (setterMethodParameterType.isAssignableFrom(Date.class)) {
 			if (value instanceof DateTime) {
 				System.out.println(value);
 				setterMethod.invoke(targetObject, ((DateTime) value).toDate());
 			}
-		} else if (aClass.isAssignableFrom(List.class)) {
+		} else if (setterMethodParameterType.isAssignableFrom(List.class)) {
 			if (value instanceof List) {
 				List listOfValues = (List) value;
 				List targetValues = new ArrayList();
@@ -149,8 +177,8 @@ public class AvroReflectionCopyUtils {
 				System.out.println("Getter did not return value as List");
 			}
 		} else {
-			System.out.println("Setting non-standard class: " + aClass.getName());
-			Object target = deepCopy(value, aClass);
+			System.out.println("Setting non-standard class: " + setterMethodParameterType.getName());
+			Object target = deepCopy(value, setterMethodParameterType);
 			setterMethod.invoke(targetObject, target);
 		}
 	}

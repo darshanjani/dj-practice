@@ -20,7 +20,7 @@ public class AvroEncoderDecoder {
 		AvroReflectionCopyUtils avroReflectionCopyUtils = new AvroReflectionCopyUtils();
 		ActualAvro actualAvro = avroReflectionCopyUtils.deepCopy(actual, ActualAvro.class);
 		byte[] bytes = encodeAvroObjectToBytes(actualAvro, ActualAvro.getClassSchema());
-		ActualAvro actualAvroDeserialized = decodeBytesToAvroObject(bytes, ActualAvro.getClassSchema());
+		ActualAvro actualAvroDeserialized = decodeBytesToAvroObject(bytes, ActualAvro.getClassSchema(), ActualAvro.getClassSchema());
 		System.out.println("Encode avro bytes: " + bytes.length);
 		System.out.println("Comparing objects: " + actualAvro.equals(actualAvroDeserialized));
 		Actual actualDeserialized = avroReflectionCopyUtils.deepCopy(actualAvroDeserialized, Actual.class);
@@ -29,7 +29,7 @@ public class AvroEncoderDecoder {
 		System.out.println(actualDeserialized);
 	}
 
-	public byte[] encodeAvroObjectToBytes(Object value, Schema schema) throws Exception {
+	public static byte[] encodeAvroObjectToBytes(Object value, Schema schema) throws Exception {
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		BinaryEncoder encoder = EncoderFactory.get().binaryEncoder(out, null);
 		DatumWriter writer = new SpecificDatumWriter(schema);
@@ -41,8 +41,8 @@ public class AvroEncoderDecoder {
 		return serializedBytes;
 	}
 
-	public <T> T decodeBytesToAvroObject(byte[] bytes, Schema schema) throws Exception {
-		DatumReader reader = new SpecificDatumReader(schema);
+	public static <T> T decodeBytesToAvroObject(byte[] bytes, Schema writerSchema, Schema readerSchema) throws Exception {
+		DatumReader reader = new SpecificDatumReader(writerSchema, readerSchema);
 		Decoder decoder = DecoderFactory.get().binaryDecoder(bytes, null);
 		return (T)reader.read(null, decoder);
 	}
