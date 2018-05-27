@@ -34,11 +34,6 @@ public class CertificateGrid<T> extends TableView<T> {
 		setContextMenu(contextMenu);
 		getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-		setOnMousePressed(me -> {
-			if (me.isPrimaryButtonDown() && me.getClickCount() == 2) {
-				System.out.println("User dbl-clicked: " + getSelectionModel().getSelectedItem());
-			}
-		});
 	}
 
 	private void addTableColumn(String header, String propertyInModel, int minWidth) {
