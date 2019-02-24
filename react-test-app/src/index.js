@@ -1,16 +1,26 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
-import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
+import { createStore } from 'redux'
+import userReducers from './material/reducers'
+import App from './material/App'
+import { BrowserRouter as Router } from 'react-router-dom'
+//import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from './todo/redux/actions'
+
+const store = createStore(userReducers)
+
+// console.log('store initial state: ', store.getState())
+// const unsubscribe = store.subscribe(() => console.log(store.getState()))
+// store.dispatch(addTodo('Learn about actions'))
+// store.dispatch(addTodo('Learn about reducers'))
+// store.dispatch(addTodo('Learn about store'))
+// store.dispatch(toggleTodo(0))
+// store.dispatch(toggleTodo(1))
+// store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED))
+// unsubscribe()
 
 ReactDOM.render(
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>
-, document.getElementById("root"));
-
-registerServiceWorker();
+  <Router>
+    <App store={store} />
+  </Router>,
+  document.getElementById('root')
+);
